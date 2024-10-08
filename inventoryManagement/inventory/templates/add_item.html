@@ -1,0 +1,7 @@
+<h2>{% if form.instance.pk %}Edit Item{% else %}Add Item{% endif %}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'item_list' %}">Back to Inventory</a>
